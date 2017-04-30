@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var n = Number(prompt('Reqem daxil et :'));
+
+        // var i=2;
+        // var saygac=0;
+
+        // while(i<=n){
+        //     if(n%i==0){
+        //         saygac++;
+        //     }
+        //     i++;
+        // }
+        // if(saygac==1){
+        //     console.log('Sade');
+        // }else{
+        //     console.log('Murekkebdi');
+        // }
+
+        
+
+        // var m = Number(prompt('Birinci reqem :'));
+        // var n = Number(prompt('ikinci reqem :'));
+        // var total_count = 0;
+        // if(m<n){
+        //    while(m<=n){
+        //         var i=2;
+        //         var saygac=0;
+        //         while(i<=m){
+        //             if(m%i==0){
+        //                 saygac++;
+        //             }
+        //             i++;
+        //         }
+        //         if(saygac==1){
+        //             total_count++;
+        //         }
+                
+        //        m++
+        //    }
+        //    if(total_count==0){
+        //        console.log('Absent');
+        //    }else{
+        //        console.log(total_count);
+        //    }
+        // }else{
+        //     console.log('Inteval duz deyil');
+        // }
+
+
+
+        // function kv(reqem){
+        //    var result = reqem*reqem;
+        //    return result;
+        // }
+
+        // var a = kv(15);
+
+
+
+        // var b = kv(10);
+
+        // var c = kv(8);
+
+
+        // console.log(a,b,c);
+		
+		/*
+        
+        function sadeDimi(reqem){
+            var i=2;
+            var saygac=0;
+            while(i<=reqem){
+                if(reqem%i==0){
+                    saygac++;
+                }
+                i++;
+            }
+            if(saygac==1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+       
+        function intervalSade(m,n){
+            var total_count = 0;
+                    if(m<n){
+                    while(m<=n){
+                        if(sadeDimi(m)){
+                            total_count++;
+                        }
+                        m++
+                    }
+                    if(total_count==0){
+                        console.log('Absent');
+                    }else{
+                        console.log(total_count);
+                    }
+                    }else{
+                        console.log('Inteval duz deyil');
+                    }
+        }
+
+        var reqem1 = Number(prompt('Birinci reqem :'));
+        var reqem2 = Number(prompt('ikinci reqem :'));
+
+        intervalSade(reqem1,reqem2);
+       
+	   */
+	   /*
+	function polyndromic () {
+		var n = Number(prompt('reqem:'));
+		var reqemli = 0;
+		var L=1;
+		
+		while (n/L>=1) {
+			L = L*10;
+			reqemli++;
+		}
+		
+		var first = 0; var last = 0; //var yox=0;
+		
+		while (reqemli>=2) {
+			first = Math.floor(n/Math.pow(10,(reqemli-1)));
+			last = n%10;
+			
+			if (first == last) {
+				n = n%Math.pow(10, (reqemli-1));
+				n= Math.floor(n/10);
+				reqemli = reqemli - 2;
+			} else {
+				//yox=1;
+				console.log("no");
+				return;
+			}
+		}
+		// if (yox == 0){
+		// console.log("yes")};
+		console.log("yes");
+	}
+	
+	function aci () {
+		var n = Number(prompt('n`den:'));
+		var m = Number(prompt('m`e:'));
+		var a = Number(prompt('a'));
+		
+		var count=0;
+		var sum=0;
+		var i=0;
+		
+		while (n<m) {
+			if (n%a==0) {
+				i=n;
+				sum=0;
+				while (i>=1) {
+					sum=sum + i%10;
+					i=Math.floor(i/10);
+				}
+				
+				if (sum==a) {
+					count++;
+					
+					if (count==a) {
+						console.log(i);
+						return;
+					}
+				}
+				n++;
+			}
+			console.log('absent');
+		}
+	}
+		
+	function zeros() {
+		var n = Number(prompt('reqem:'));
+		var count = 0;
+		
+		while (n>0) {
+			if (n%10 == 0) {
+				count++;
+				if (count == 2){
+					console.log('YES');
+					return;
+				}
+			}
+			n=Math.floor(n/10);
+		}
+		console.log('NO');
+	}
+	
+	
+	
+	function unical(){
+		m = Number(prompt('1ci eded'));
+		n = Number(prompt('2ci eded'));
+		
+		var big = 0;
+		var small = 0;
+		//var a[];
+		var i;
+		var unicalN=[];
+		var counter;
+		var h=0;
+		
+		if (m>n) {
+			big = m;
+			small = n;
+		} else {
+			big = n;
+			small = m;
+		}
+		
+		while (small <= big) {
+			var a = [];
+			x = small;
+			i=0
+			while (x>0) {
+				a[i] = x%10;
+				x = Math.floor(x/10);
+				i++;
+			}
+			counter = 0;
+			
+			for(j=1; j<a.length; j++){
+				if(a[j] == a[j-1] - 1) {
+					counter++;
+				}
+			}
+			
+			if(counter == a.length - 1) {
+				var l=0; 
+				var number = 0;
+				
+				for (k=0; k<a.length; k++) {
+					number += a[k] * Math.pow(10,l);
+					l++;
+				}
+				unicalN[h] = number;
+				h++;
+			}
+			small++;
+		}
+		
+		for (b=0; b<unicalN.length; b++) {
+			console.log(unicalN[b]);
+		}
+		
+		*/
+		
+		
+	var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+	var temp = [arr[arr.length-1]];
+	
+	for(var i=arr.length-1;i>0;i--) {
+		arr[i] = arr[i-1];
+	}
+	
+	arr[0] = temp;
+	
+	for(var j=0; j<arr.length;j++){
+		console.log(j+'   '+arr[j]);
+	}
+	
+	document.write(arr);
+	
+	//unical();
+	
+
+	
+	</script>
+</body>
+</html>
